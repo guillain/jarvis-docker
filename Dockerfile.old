@@ -1,0 +1,45 @@
+FROM balenalib/rpi-raspbian
+
+MAINTAINER Guillain <guillain@gmail.com>
+
+ENV QEMU_EXECVE 1
+COPY . /usr/bin
+
+#RUN [ "/usr/bin/qemu-arm-static", "apt-get", "update" ]
+
+#RUN [ "cross-build-start" ]
+
+RUN apt-get update
+
+#RUN apt-get update && apt-get install -y --fix-missing \
+RUN apt-get install -y --fix-missing \
+    python \
+    python-dev \
+    python-pip \
+    python-virtualenv \
+    pi-bluetooth \
+    blueman \
+    pulseaudio \
+    pavucontrol \
+    pulseaudio-module-bluetooth \
+    swig \
+    make \
+    python-dev \
+    swig3.0 \
+    python-pyaudio \
+    python3-pyaudio \
+    sox \
+    libatlas-base-dev \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN npm install --save snowboy
+RUN pip install pyaudio
+RUN node-pre-gyp clean configure build
+
+RUN [ "cross-build-end" ]  
+
+WORKDIR /data
+
+CMD ["bash"]
+

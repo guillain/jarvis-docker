@@ -1,0 +1,54 @@
+
+# Jarvis
+
+sudo apt update -y --fix-missing
+sudo apt install -y --fix-missing pi-bluetooth blueman pulseaudio pavucontrol pulseaudio-module-bluetooth swig make python-dev swig3.0 python-pyaudio python3-pyaudio sox
+npm install --save snowboy
+pip install pyaudio
+sudo apt-get install libatlas-base-dev
+node-pre-gyp clean configure build
+cd swig/Python
+make
+
+echo "Youtube"
+
+echo "oepnweather"
+jarvis -p https://github.com/degami/jarvis-openweathermap
+
+echo "Courses"
+jarvis -p https://github.com/mtribiere/Jarvis-Courses/
+
+echo "ToDo"
+jarvis -p https://github.com/magicoli/jarvis-todo-txt
+#jarvis -p https://github.com/jv/todo
+
+echo "Alarm"
+jarvis -p https://github.com/Pineapple-Geek/jarvis-alarm
+
+echo "Joke (FR)"
+jarvis -p https://github.com/Jean-Bernard-Hallez/jarvis-blagues
+
+echo "Pense-bête (FR)"
+jarvis -p https://github.com/godinperson/jarvis-pense-bete
+
+echo "SMS"
+jarvis -p https://github.com/Jean-Bernard-Hallez/jarvis-FREE-sms
+
+echo "Math"
+jarvis -p https://github.com/Jean-Bernard-Hallez/jarvis-math
+
+Citation
+jarvis -p https://github.com/Jean-Bernard-Hallez/jarvis-lacitation
+
+
+echo "Happyirthday"
+jarvis -p https://github.com/Jean-Bernard-Hallez/jarvis-cestquand
+
+
+echo "Weater"
+jarvis -p https://github.com/alexylem/jarvis-weather-wunderground-fr
+#https://www.wunderground.com
+
+https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/
+Endpoint: https://westus.api.cognitive.microsoft.com/sts/v1.0
+Endpoint: https://westus.api.cognitive.microsoft.com/spid/v1.0

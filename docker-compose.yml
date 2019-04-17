@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  git:
+    image: jarvis-docker:1.0
+    container_name: jarvis-docker
+    build: .
+    #command: git -C /build clone https://github.com/guillain/jarvis-docker.git
+    #volumes:
+    #  - ./build:/build
+
+
